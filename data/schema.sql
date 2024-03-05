@@ -17,23 +17,28 @@ CREATE TABLE IF NOT EXISTS UEFA.stadiums
 
 CREATE TABLE IF NOT EXISTS UEFA.players
 (
-    player_id     text      NOT NULL PRIMARY KEY,
-    first_name    text      NOT NULl DEFAULT '',
-    last_name     text      NOT NULL DEFAULT '',
-    nationality   text      NOT NULL DEFAULT '',
-    dob           timestamp NOT NULL,
-    team          text      NOT NULL DEFAULT '',
-    jersey_number text      NOT NULL DEFAULT '',
-    position      text      NOT NULL DEFAULT ''
+    player_id     text    NOT NULL PRIMARY KEY,
+    first_name    text    NOT NULl DEFAULT '',
+    last_name     text    NOT NULL DEFAULT '',
+    nationality   text    NOT NULL DEFAULT '',
+    dob           date    NULL,
+    team          text    NOT NULL DEFAULT '',
+    jersey_number text    NOT NULL DEFAULT '',
+    position      text    NOT NULL DEFAULT '',
+    height        integer NOT NULL DEFAULT -1,
+    weight        integer NOT NULL DEFAULT -1,
+    foot          text    NOT NULL DEFAULT ''
 );
+
+DROP TABLE UEFA.players;
 
 CREATE TABLE IF NOT EXISTS UEFA.managers
 (
     first_name  text      NOT NULl DEFAULT '',
     last_name   text      NOT NULL DEFAULT '',
     nationality text      NOT NULL DEFAULT '',
-    dob         timestamp NOT NULL,
-    team        text      NOT NULL DEFAULT '',
+    dob         date NOT NULL,
+    team        text      NOT NULL DEFAULT ''
 );
 
 CREATE TABLE IF NOT EXISTS UEFA.matches
@@ -53,8 +58,8 @@ CREATE TABLE IF NOT EXISTS UEFA.matches
 CREATE TABLE IF NOT EXISTS UEFA.goals
 (
     goal_id   text    NOT NULl DEFAULT '' PRIMARY KEY,
-    match_id  text    NOT NULl DEFAULT '' PRIMARY KEY,
-    player_id text    NOT NULl DEFAULT '' PRIMARY KEY,
+    match_id  text    NOT NULl DEFAULT '',
+    player_id text    NOT NULl DEFAULT '',
     duration  integer NOT NULl DEFAULT 0,
     assist    text    NOT NULl DEFAULT '',
     goal_desc text    NOT NULL DEFAULT ''

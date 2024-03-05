@@ -54,16 +54,6 @@ WHERE match_id = 'match123';
 DELETE FROM UEFA.matches
 WHERE match_id = 'match123';
 
-
 SELECT * FROM UEFA.matches
 WHERE match_id = 'match123';
-
-
-
-
-
-
-
-
-
 
