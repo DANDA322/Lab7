@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS UEFA.matches
     attendance        integer NOT NULL DEFAULT 0
 );
 
-CREATE TABLE IF NOT EXISTS UEFA.matches
+CREATE TABLE IF NOT EXISTS UEFA.goals
 (
     goal_id   text    NOT NULl DEFAULT '' PRIMARY KEY,
     match_id  text    NOT NULl DEFAULT '' PRIMARY KEY,
